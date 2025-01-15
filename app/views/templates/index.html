@@ -1,4 +1,13 @@
-{{define "content"}}
+{{ define "content" }} UserName:{{.Name}}
+<h1>TodoApp</h1>
 
-<h1>index</h1>
-{{end}}
+<p>[<a href="/todos/new">Create</a>]</p>
+<hr />
+
+{{ range .Todos }}
+<div>{{ .Content }}</div>
+<p>[<a href="/todos/edit/{{.ID}}">Edit</a>]</p>
+<p>[<a href="/todos/delete/{{.ID}}">Delete</a>]</p>
+<hr />
+
+{{end}} {{end}}
